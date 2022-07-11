@@ -15,7 +15,7 @@ namespace SingleStone.Controllers
                 {
                 Id = ++i,
                     name = new Name("Steven", "W", "Flanders"),
-                    address = new Address("5 Abbot bridge drive", "Andover", "Massachusettes", "018180"),
+                    address = new Address("5 Abbot bridge drive", "Andover", "Massachusettes", "01810"),
                     phone = new PhoneNumber("607-475-2685")
                 }
             )
@@ -28,15 +28,15 @@ namespace SingleStone.Controllers
             return Get().FirstOrDefault();
         }
 
-        [HttpPost]
+        [HttpPost("Contact")]
         public Contact Post(Contact contact)
         {
             // Create a new contact
-            return contact;
+            return Get().FirstOrDefault();
         }
 
-        [HttpPut]
-        public Contact Put(Contact contact)
+        [HttpPut("Id")]
+        public Contact Put(long Id, Contact contact)
         {
             // Update a contact
             return contact;
